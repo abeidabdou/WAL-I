@@ -32,7 +32,7 @@ _(WAL-I assumes the current channel if none is specified)_
 
 ```diff
 - "message: delete the last 20 messages sent here"
-- "message: delete the last 50 messages in all channels" _(Server owner only)_
+- "message: delete the last 50 messages in all channels" (Server owner only)
 ```
 
 **1.3 Deleting Messages by Interval:**
@@ -41,7 +41,8 @@ _(WAL-I assumes the current channel if none is specified)_
 - "message: Delete the 10 messages sent before 23423424532 in test"
 - "message: delete the last 10 messages sent after 2375672242"
 - "message: delete the messages sent after 2375672242 and before 23423424532 in channel test"
-- "input: delete the messages sent between 2375672242 and 23423424532 in channel test" _(Notice here I didn't have to specify which one is the before and which one is the after message ID)_
+- "message: delete the messages sent between 2375672242 and 23423424532 in channel test"
+(Notice in the last one I didn't have to specify which one is the before and which one is the after message ID)
 ```
 
 **1.4 Deleting Messages with Attachments:**
@@ -81,18 +82,6 @@ _(Server owner only)_
 ```
 _(WAL-I uses the international timezone)_
 
-**Important Notes:**
-
-```diff
-! Specificity is key.
-! Only a server owner can delete messages in all channels simultaneously.
-! If no limit is provided, the default limit is 5 messages for everyone else and none for server owners.
-! No limit is needed when using before and after criteria.
-! Server owners can delete messages using date and time across all channels.
-! Moderators cannot delete messages using date and time.
-! A reason must be provided for all deletions.
-```
-
 WAL-I provides targeted message deletion capabilities with an emphasis on specificity. If it can't fulfill a request, it will notify you.
 
 #### 2. Moderation Actions
@@ -102,6 +91,18 @@ WAL-I can ban, kick, timeout, mute, and unmute one or multiple users.
 ```diff
 - "message: WAL-I ban Amy"
 - "message: WAL-I ban Amy, Samy, and Ali"
+```
+
+**Important Notes:**
+
+```diff
+! Specificity is key.
+! Only a server owner can delete messages in all channels simultaneously.
+! If no limit is provided, the default limit is 5 messages for everyone else and none for server owners.
+! No limit is needed when using before and after criteria.
+! Server owners can delete messages using date and time across all channels.
+! Moderators cannot delete messages using date and time.
+! A reason must be provided for all deletions, banning, timing out or kicking.
 ```
 
 #### 3. Role Permissions
