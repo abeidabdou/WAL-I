@@ -18,67 +18,67 @@ WAL-I can delete messages based on various criteria: by user, keywords, links, a
 **1.1 Deleting Messages by ID:**
 
 ```diff
-- "message: Delete this message to ensure privacy. 32109876"
-- "message: WAL-I, this message needs to be removed, 23424234, 32109876, user doesn't respect the rules"
+- "Delete this message to ensure privacy. 32109876"
+- "WAL-I, this message needs to be removed, 23424234, 32109876, user doesn't respect the rules"
 ```
 
 **1.2 Deleting Messages by Channel:**
 
 ```diff
-- "message: delete the last 30 messages in test"
-- "message: delete the last 20 messages"
+- "delete the last 30 messages in test"
+- "delete the last 20 messages"
 ```
 _(WAL-I assumes the current channel if none is specified)_
 
 ```diff
-- "message: delete the last 20 messages sent here"
-- "message: delete the last 50 messages in all channels" (Server owner only)
+- "delete the last 20 messages sent here"
+- "delete the last 50 messages in all channels" (Server owner only)
 ```
 
 **1.3 Deleting Messages by Interval:**
 
 ```diff
-- "message: Delete the 10 messages sent before 23423424532 in test"
-- "message: delete the last 10 messages sent after 2375672242"
-- "message: delete the messages sent after 2375672242 and before 23423424532 in channel test"
-- "message: delete the messages sent between 2375672242 and 23423424532 in channel test"
+- "Delete the 10 messages sent before 23423424532 in test"
+- "delete the last 10 messages sent after 2375672242"
+- "delete the messages sent after 2375672242 and before 23423424532 in channel test"
+- "delete the messages sent between 2375672242 and 23423424532 in channel test"
 (Notice in the last one I didn't have to specify which one is the before and which one is the after message ID)
 ```
 
 **1.4 Deleting Messages with Attachments:**
 
 ```diff
-- "message: delete all messages with link"
-- "message: delete any message with an image in channel test"
+- "delete all messages with link"
+- "delete any message with an image in channel test"
 ```
 
 **1.5 Deleting Messages with Specific Words or Keywords:**
 
 ```diff
-- "message: Delete any message containing this emoji 🫡"
+- "Delete any message containing this emoji 🫡"
 ```
 
 **1.6 Deleting Messages by Users:**
 
 ```diff
-- "message: delete the last 10 messages Ali sent"
-- "message: delete the last 10 messages Ali sent in test"
-- "message: delete the last 10 messages I sent in channel test"
-- "message: delete the last 10 messages I sent in all channels"
+- "delete the last 10 messages Ali sent"
+- "delete the last 10 messages Ali sent in test"
+- "delete the last 10 messages I sent in channel test"
+- "delete the last 10 messages I sent in all channels"
 ```
 _(Server owner only)_
 
 ```diff
-- "message: Delete the 20 messages Ali sent before 23423424532 in channel test"
-- "message: delete messages sent by Ali after 23453534536 and before 23423424532"
-- "message: delete messages with stp in channel test sent by Ali before this message 23453534536"
+- "Delete the 20 messages Ali sent before 23423424532 in channel test"
+- "delete messages sent by Ali after 23453534536 and before 23423424532"
+- "delete messages with stp in channel test sent by Ali before this message 23453534536"
 ```
 
 **Combining Criteria:**
 
 ```diff
-- "message: Delete messages sent by Ali and Sam containing trip"
-- "message: delete messages sent between 2am and 5pm"
+- "Delete messages sent by Ali and Sam containing trip"
+- "delete messages sent between 2am and 5pm"
 ```
 _(WAL-I uses the international timezone)_
 
@@ -89,9 +89,18 @@ WAL-I provides targeted message deletion capabilities with an emphasis on specif
 WAL-I can ban, kick, timeout, mute, and unmute one or multiple users.
 
 ```diff
-- "message: WAL-I ban Amy"
-- "message: WAL-I ban Amy, Samy, and Ali"
+- "WAL-I ban Amy"
+- "WAL-I ban Amy, Samy, and Ali"
 ```
+
+#### 3. Role Permissions
+
+WAL-I can assign role permissions in a channel (server owner only).
+
+```diff
+- "WAL-I let everyone send messages in test"
+```
+_(This grants @everyone the permission to send messages in channel test)_
 
 **Important Notes:**
 
@@ -107,15 +116,6 @@ WAL-I can ban, kick, timeout, mute, and unmute one or multiple users.
 ! When timimg out, if there's no specific time provided the limit will be 24h
 ! You when banning a member you can also delete the messages he sent in the server
 ```
-
-#### 3. Role Permissions
-
-WAL-I can assign role permissions in a channel (server owner only).
-
-```diff
-- "message: WAL-I let everyone send messages in test"
-```
-_(This grants @everyone the permission to send messages in channel test)_
 
 ### Modules
 
