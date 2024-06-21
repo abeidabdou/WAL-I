@@ -134,8 +134,8 @@ Removing a mod is as simple as removing the `WAL-I mod` role or deleting their s
 ! WAL-I retains request context for 5 minutes after the last request.
 ```
 
-If you have more questions, join our [Discord server](#).
+If you have more questions, ask in this [Discord server](#).
 
-## Subscribe and Add WAL-I to Your Server
+## Add WAL-I to Your Server by subscribing and help me make Wal-i even better 
 
 The subscription fee is $5.
