@@ -41,9 +41,8 @@ _(WAL-I assumes the current channel if none is specified)_
 - "message: Delete the 10 messages sent before 23423424532 in test"
 - "message: delete the last 10 messages sent after 2375672242"
 - "message: delete the messages sent after 2375672242 and before 23423424532 in channel test"
-- "input: delete the messages sent between 2375672242 and 23423424532 in channel test"
+- "input: delete the messages sent between 2375672242 and 23423424532 in channel test" _(Notice here I didn't have to specify which one is the before and which one is the after message ID)_
 ```
-_(WAL-I determines the before and after IDs automatically)_
 
 **1.4 Deleting Messages with Attachments:**
 
