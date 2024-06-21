@@ -97,6 +97,7 @@ WAL-I can ban, kick, timeout, mute, and unmute one or multiple users.
 
 ```diff
 ! Specificity is key.
+! You can combine all the creterias listed here when making a request.
 ! Only a server owner can delete messages in all channels simultaneously.
 ! If no limit is provided, the default limit is 5 messages for everyone else and none for server owners.
 ! No limit is needed when using before and after criteria.
