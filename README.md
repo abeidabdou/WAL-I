@@ -3,7 +3,7 @@
 **WAL-I is a friendly Discord bot powered by AI and the Discord API, designed to assist you and your moderators by understanding and responding to commands in plain, everyday language.**
 
 > Welcome to the shortest documentation you'll ever read!  
-> Before starting, watch the video to understand more about what you will be reading.
+> Before starting, watch the video if you didn't watch it before to understand more about what you will be reading.
 
 ## What Can WAL-I Do?
 
@@ -103,6 +103,8 @@ WAL-I can ban, kick, timeout, mute, and unmute one or multiple users.
 ! Server owners can delete messages using date and time across all channels.
 ! Moderators cannot delete messages using date and time.
 ! A reason must be provided for all deletions, banning, timing out or kicking.
+! When timimg out, if there's no specific time provided the limit will be 24h
+! You when banning a member you can also delete the messages he sent in the server
 ```
 
 #### 3. Role Permissions
