@@ -14,11 +14,13 @@ Since wali doesn't use any command to perform actions but natural language, we w
 ### 1. Wal-i can delete messages written by a specific user, containing specific keywords, including links, or targeting a specific attachment. Wal-i can also delete messages by intervals, whether these intervals are based on date and time or message IDs. Additionally, he can delete messages by channels or simply by their IDs.
 
 #### 1.2 Deleting messages by id
+
 > "message: Delete this message to ensure privacy. 32109876"
 
 > "message: wal-i this message needs to be removed, 23424234, 32109876, user doesn't respect the rules",
 
 #### 1.2 Deleting messages by channels
+
 > "message: delete the last 30 messages in test",
 
 > "message: delete the last 20 messages" (Notice here I am not specying any channel, which means Wal-i will assume that the channel is where the request is being made)
@@ -28,6 +30,7 @@ Since wali doesn't use any command to perform actions but natural language, we w
 > "message: delete the last 50 messages in all channels", (The possiblity of deleting messages in all channels is only available to the server owner)
 
 #### 1.3 Deleting messages by intervalles
+
 > "message: Delete the 10 messages sent before 23423424532 in test" (This will delete the 10 messages sent just before that message ID)
 
 > "message: delete the last 10 messages sent after 2375672242." (This will delete the 10 messages sent just after that message ID)
@@ -37,14 +40,17 @@ Since wali doesn't use any command to perform actions but natural language, we w
 > "input: delete the messages sent betwen 2375672242 23423424532 in channel test." (Notice here and didn't have to specify Wal-i will always know which one is the before and which is the after message ID)
 
 #### 1.4 Deleting messages with attachements
+
 > "message: delete all messages with link"
 
 > "message: delete any message with an image in channel test"
 
 #### 1.5 Deleting messages with a specifique word or keyword
+
 > "message: Delete any message containing this emoji 🫡"
 
 #### 1.6 Deleting messages by users
+
 > "message: delete the last 10 messages ali sent" (We already established that if no channel is provided the channel where the command is being invoked is used)
 
 > "message: delete the last 10 messages ali sent in test" (Notice here I didn't have to specify that test is a channel)
@@ -60,14 +66,19 @@ Since wali doesn't use any command to perform actions but natural language, we w
 > "message: delete messages with stp in channel test sent by ali before this message 23453534536" (This will delete any message the member ali before that message ID containing the word "stp")
 
 And all of that can be combined
+
 This can work:
+
 > "message: Delete messages sent by ali and sam containing trip"
+
 As this can also work
 
 > "message: delete messages sent between 2am and 5pm" (You just need to know that Wal-i uses the international timezone since the discord API doesn't provide any way of getting the user timezone)
 
 You can combine all of that you just need to be specific in your request:
+
 **Here's some few things to keep in mind when deleting messages**
+
 > Specificity is key
 
 > Only a server owner can delete messages in all channels at the same time
@@ -89,8 +100,11 @@ You can combine all of that you just need to be specific in your request:
 Just remember specifity is key
 
 This can work:
+
 > "message: wal-i ban amy"
+
 As this can also work:
+
 > "message: wali ban amy, samy and ali"
 
 ### 3. Wal-i can give roles permissions in a channel (Available only to server owners)
@@ -108,10 +122,12 @@ To just invoke the command wali create mod, and the command will ask you who you
 **More modules are going to be added**
 
 **Just a disclaimer**
+
 Wal-i doesn't store any mod stats in a database which means if you delete the message conataining a mod stats, that data will be lost forever.
 The only data wal-i keep is when you are making requests so it can have context, and that's kept for 5 minutes after the last request made.
 
 I know that I didn't do a good a Job of explaining so if you have more questions there's a link to a discord server down below.
 
 ## Subscribe and add Wal-i to your server
+
 The Subscribtion fee is 5$
