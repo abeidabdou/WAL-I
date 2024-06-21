@@ -32,9 +32,8 @@ _(WAL-I assumes the current channel if none is specified)_
 
 ```diff
 - "message: delete the last 20 messages sent here"
-- "message: delete the last 50 messages in all channels"
+- "message: delete the last 50 messages in all channels" _(Server owner only)_
 ```
-_(Server owner only)_
 
 **1.3 Deleting Messages by Interval:**
 
