@@ -138,4 +138,4 @@ If you have more questions, ask in this [Discord server](#).
 
 ## Add WAL-I to Your Server by subscribing and help me make Wal-i even better 
 
-The subscription fee is $6.
+The subscription fee is $5.
