@@ -138,6 +138,6 @@ Removing a mod is as simple as removing the `WAL-I mod` role or deleting their s
 
 If you have more questions, ask in this [Discord server](#).
 
-## Add WAL-I to Your Server by subscribing and help me make Wal-i even better 
+## Add WAL-I to Your Server by subscribing and help me add more to what Wal-i can do 
 
 The subscription fee is $5.
