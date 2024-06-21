@@ -119,11 +119,11 @@ _(This grants @everyone the permission to send messages in channel test)_
 
 ### Modules
 
-Currently, WAL-I offers a module that allows mods to delete messages, ban, kick, timeout, and mute without needing additional permissions. To create a mod:
+Currently, WAL-I offers a module that allows mods to delete messages, ban, kick, timeout, and mute without giving them those permissions. To create a mod:
 
 1. Invoke the command: `WAL-I create mod`.
 2. Specify the user, the number of bans, kicks, timeouts, and messages they can delete.
-3. The user will be assigned a `WAL-I mod` role, granting them the ability to use WAL-I commands.
+3. The user will be assigned a `WAL-I mod` role, granting them the ability to use WAL-I request command and do any mod work via Wal-i.
 4. Adjust their limits or reset their stats as needed.
 
 Removing a mod is as simple as removing the `WAL-I mod` role or deleting their stats message.
