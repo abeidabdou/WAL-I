@@ -87,7 +87,7 @@ _(WAL-I uses the international timezone)_
 ```diff
 ! Specificity is key.
 ! Only a server owner can delete messages in all channels simultaneously.
-! If no limit is provided, the default limit is 5 messages.
+! If no limit is provided, the default limit is 5 messages for everyone else and none for server owners.
 ! No limit is needed when using before and after criteria.
 ! Server owners can delete messages using date and time across all channels.
 ! Moderators cannot delete messages using date and time.
