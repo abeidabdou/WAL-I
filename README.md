@@ -1,133 +1,140 @@
 # WAL-I
-**WAL-I is a friendly Discord bot powered by AI and the Discord API, designed to assist you and your moderators by understanding and responding to commands in plain, everyday language**
 
-> Welcome to the shortest documentation you'll ever read!
+**WAL-I is a friendly Discord bot powered by AI and the Discord API, designed to assist you and your moderators by understanding and responding to commands in plain, everyday language.**
 
-> Before Starting you should watch the video to understand more of what you will be reading 
+> Welcome to the shortest documentation you'll ever read!  
+> Before starting, watch the video to understand more about what you will be reading.
 
-**What can Wal-i do now?**
+## What Can WAL-I Do?
 
-## Commands
+### Commands
 
-Since wali doesn't use any command to perform actions but natural language, we will go by examples
+Since WAL-I doesn't use any specific command to perform actions but relies on natural language, we will go through examples.
 
-### 1. Wal-i can delete messages written by a specific user, containing specific keywords, including links, or targeting a specific attachment. Wal-i can also delete messages by intervals, whether these intervals are based on date and time or message IDs. Additionally, he can delete messages by channels or simply by their IDs.
+#### 1. Deleting Messages
 
-#### 1.2 Deleting messages by id
+WAL-I can delete messages based on various criteria: by user, keywords, links, attachments, time intervals, and message IDs. Deletion can also be scoped to specific channels or all channels for server owners.
 
-> "message: Delete this message to ensure privacy. 32109876"
+**1.1 Deleting Messages by ID:**
 
-> "message: wal-i this message needs to be removed, 23424234, 32109876, user doesn't respect the rules",
+```diff
+- "message: Delete this message to ensure privacy. 32109876"
+- "message: WAL-I, this message needs to be removed, 23424234, 32109876, user doesn't respect the rules"
+```
 
-#### 1.2 Deleting messages by channels
+**1.2 Deleting Messages by Channel:**
 
-> "message: delete the last 30 messages in test",
+```diff
+- "message: delete the last 30 messages in test"
+- "message: delete the last 20 messages"
+```
+_(WAL-I assumes the current channel if none is specified)_
 
-> "message: delete the last 20 messages" (Notice here I am not specying any channel, which means Wal-i will assume that the channel is where the request is being made)
+```diff
+- "message: delete the last 20 messages sent here"
+- "message: delete the last 50 messages in all channels"
+```
+_(Server owner only)_
 
-> "message: delete the last 20 messages sent here"
+**1.3 Deleting Messages by Interval:**
 
-> "message: delete the last 50 messages in all channels", (The possiblity of deleting messages in all channels is only available to the server owner)
+```diff
+- "message: Delete the 10 messages sent before 23423424532 in test"
+- "message: delete the last 10 messages sent after 2375672242"
+- "message: delete the messages sent after 2375672242 and before 23423424532 in channel test"
+- "input: delete the messages sent between 2375672242 and 23423424532 in channel test"
+```
+_(WAL-I determines the before and after IDs automatically)_
 
-#### 1.3 Deleting messages by intervalles
+**1.4 Deleting Messages with Attachments:**
 
-> "message: Delete the 10 messages sent before 23423424532 in test" (This will delete the 10 messages sent just before that message ID)
+```diff
+- "message: delete all messages with link"
+- "message: delete any message with an image in channel test"
+```
 
-> "message: delete the last 10 messages sent after 2375672242." (This will delete the 10 messages sent just after that message ID)
+**1.5 Deleting Messages with Specific Words or Keywords:**
 
-> "message: delete the messages sent after 2375672242 and before 23423424532 in channel test."
+```diff
+- "message: Delete any message containing this emoji 🫡"
+```
 
-> "input: delete the messages sent betwen 2375672242 23423424532 in channel test." (Notice here and didn't have to specify Wal-i will always know which one is the before and which is the after message ID)
+**1.6 Deleting Messages by Users:**
 
-#### 1.4 Deleting messages with attachements
+```diff
+- "message: delete the last 10 messages Ali sent"
+- "message: delete the last 10 messages Ali sent in test"
+- "message: delete the last 10 messages I sent in channel test"
+- "message: delete the last 10 messages I sent in all channels"
+```
+_(Server owner only)_
 
-> "message: delete all messages with link"
+```diff
+- "message: Delete the 20 messages Ali sent before 23423424532 in channel test"
+- "message: delete messages sent by Ali after 23453534536 and before 23423424532"
+- "message: delete messages with stp in channel test sent by Ali before this message 23453534536"
+```
 
-> "message: delete any message with an image in channel test"
+**Combining Criteria:**
 
-#### 1.5 Deleting messages with a specifique word or keyword
+```diff
+- "message: Delete messages sent by Ali and Sam containing trip"
+- "message: delete messages sent between 2am and 5pm"
+```
+_(WAL-I uses the international timezone)_
 
-> "message: Delete any message containing this emoji 🫡"
+**Important Notes:**
 
-#### 1.6 Deleting messages by users
+```diff
+! Specificity is key.
+! Only a server owner can delete messages in all channels simultaneously.
+! If no limit is provided, the default limit is 5 messages.
+! No limit is needed when using before and after criteria.
+! Server owners can delete messages using date and time across all channels.
+! Moderators cannot delete messages using date and time.
+! A reason must be provided for all deletions.
+```
 
-> "message: delete the last 10 messages ali sent" (We already established that if no channel is provided the channel where the command is being invoked is used)
+WAL-I provides targeted message deletion capabilities with an emphasis on specificity. If it can't fulfill a request, it will notify you.
 
-> "message: delete the last 10 messages ali sent in test" (Notice here I didn't have to specify that test is a channel)
+#### 2. Moderation Actions
 
-> "message: delete the last 10 messages I sent in channel test."
+WAL-I can ban, kick, timeout, mute, and unmute one or multiple users.
 
-> "message: delete the last 10 messages I sent in all channels" (This is only available to the server owner, still don't know why you would need it)
+```diff
+- "message: WAL-I ban Amy"
+- "message: WAL-I ban Amy, Samy, and Ali"
+```
 
-> "message: Delete the 20 messages ali sent before 23423424532 in channel test" (This will delete the next 10 message the member ali sent after that message ID)
+#### 3. Role Permissions
 
-> "message: delete messages sent by ali after 23453534536 and before 23423424532"
+WAL-I can assign role permissions in a channel (server owner only).
 
-> "message: delete messages with stp in channel test sent by ali before this message 23453534536" (This will delete any message the member ali before that message ID containing the word "stp")
+```diff
+- "message: WAL-I let everyone send messages in test"
+```
+_(This grants @everyone the permission to send messages in channel test)_
 
-And all of that can be combined
+### Modules
 
-This can work:
+Currently, WAL-I offers a module that allows mods to delete messages, ban, kick, timeout, and mute without needing additional permissions. To create a mod:
 
-> "message: Delete messages sent by ali and sam containing trip"
+1. Invoke the command: `WAL-I create mod`.
+2. Specify the user, the number of bans, kicks, timeouts, and messages they can delete.
+3. The user will be assigned a `WAL-I mod` role, granting them the ability to use WAL-I commands.
+4. Adjust their limits or reset their stats as needed.
 
-As this can also work
+Removing a mod is as simple as removing the `WAL-I mod` role or deleting their stats message.
 
-> "message: delete messages sent between 2am and 5pm" (You just need to know that Wal-i uses the international timezone since the discord API doesn't provide any way of getting the user timezone)
+**Disclaimer:**
 
-You can combine all of that you just need to be specific in your request:
+```diff
+! WAL-I does not store mod stats in a database. Deleting the stats message will permanently remove the data.
+! WAL-I retains request context for 5 minutes after the last request.
+```
 
-**Here's some few things to keep in mind when deleting messages**
+If you have more questions, join our [Discord server](#).
 
-> Specificity is key
+## Subscribe and Add WAL-I to Your Server
 
-> Only a server owner can delete messages in all channels at the same time
-
-> If you are not a server owner and you didn't provide a limit when deleting a message the default limit will be 5
-
-> When deleting messages with before and after you don't need any limit
-
-> When before and after are date time and if you are a server owner you can delete messages in all channels at the same time
-
-> Moderators cannot delete messages using date and time
-
-> Notice that none of the examples give a reason when deleting messages but you will always need one
-
-**Wal-i gives you targeted message deletion capabilities, you just need to remember specificity is key. And if he can't do something he will just tell you**
-
-### 2. Wal-i can also ban, kick, timeout, mute and unmute one or multiple users
-
-Just remember specifity is key
-
-This can work:
-
-> "message: wal-i ban amy"
-
-As this can also work:
-
-> "message: wali ban amy, samy and ali"
-
-### 3. Wal-i can give roles permissions in a channel (Available only to server owners)
-
-> "message: wal-i let everyone send messages in test" (This will give @everyone the permission to send messages in channel test)
-
-
-**There are more command capabilities to come, you can also suggest yours**
-
-## Modules
-
-For the time being wal-i only modules is a module that gives your mods access to deleting messages, banning, kicking, timimg out and muting without them having any permissions.
-To just invoke the command wali create mod, and the command will ask you who you want to make a mod, the messages he number of bans he can have, kicks, timeouts, and the number of messages he delete. Then a role wali mod will be assigned to him that will let him uses the command that invoke Wal-i. You can reset the numbers he used to 0 or adjust his limits. Know that if you assign anyone the mod role he will be able to delete messages in any channel he is member. The moment you decide that you want to remove that mode you can just remove the role wali mod from him or delete the message showing his stats
-
-**More modules are going to be added**
-
-**Just a disclaimer**
-
-Wal-i doesn't store any mod stats in a database which means if you delete the message containing a mod stats, that data will be lost forever.
-The only data wal-i keep is when you are making requests so it can have context, and that's kept for 5 minutes after the last request made.
-
-I know that I didn't do a good a Job of explaining so if you have more questions there's a link to a discord server down below.
-
-## Subscribe and add Wal-i to your server
-
-The Subscribtion fee is 5$
+The subscription fee is $5.
