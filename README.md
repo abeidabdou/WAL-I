@@ -133,6 +133,7 @@ Removing a mod is as simple as removing the `WAL-I mod` role or deleting their s
 ```diff
 ! WAL-I does not store mod stats in a database. Deleting the stats message will permanently remove the data.
 ! WAL-I retains request context for 5 minutes after the last request.
+! One of the Goal is to make a bot that will never retain any of your data, so you your data will always live in your server
 ```
 
 If you have more questions, ask in this [Discord server](#).
