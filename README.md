@@ -78,7 +78,7 @@ _(Server owner only)_
 
 ```diff
 - "Delete messages sent by Ali and Sam containing trip"
-- "delete messages sent between 2am and 5pm"
+- "delete messages sent between 2am and 5pm cotaining an image, sent by sam in general"
 ```
 _(WAL-I uses the international timezone)_
 
