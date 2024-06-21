@@ -1,3 +1,5 @@
+![WAL-I](DrawKit Vector Illustration Animal & Pets (21).png)
+
 # WAL-I
 
 **WAL-I is a friendly Discord bot powered by AI and the Discord API, designed to assist you and your moderators by understanding and responding to commands in plain, everyday language.**
