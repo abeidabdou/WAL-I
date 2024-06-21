@@ -123,7 +123,7 @@ To just invoke the command wali create mod, and the command will ask you who you
 
 **Just a disclaimer**
 
-Wal-i doesn't store any mod stats in a database which means if you delete the message conataining a mod stats, that data will be lost forever.
+Wal-i doesn't store any mod stats in a database which means if you delete the message containing a mod stats, that data will be lost forever.
 The only data wal-i keep is when you are making requests so it can have context, and that's kept for 5 minutes after the last request made.
 
 I know that I didn't do a good a Job of explaining so if you have more questions there's a link to a discord server down below.
