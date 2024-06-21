@@ -1,5 +1,4 @@
 ![WAL-I](https://github.com/abeidabdou/WAL-I/blob/fd2be38b24b161884e3adb205112836f950f624d/DrawKit%20Vector%20Illustration%20Animal%20%26%20Pets%20(21).png)
-
 # WAL-I
 
 **WAL-I is a friendly Discord bot powered by AI and the Discord API, designed to assist you and your moderators by understanding and responding to commands in plain, everyday language.**
