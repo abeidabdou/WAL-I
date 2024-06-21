@@ -64,9 +64,8 @@ _(WAL-I assumes the current channel if none is specified)_
 - "delete the last 10 messages Ali sent"
 - "delete the last 10 messages Ali sent in test"
 - "delete the last 10 messages I sent in channel test"
-- "delete the last 10 messages I sent in all channels"
+- "delete the last 10 messages I sent in all channels" _(Server owner only)_
 ```
-_(Server owner only)_
 
 ```diff
 - "Delete the 20 messages Ali sent before 23423424532 in channel test"
@@ -107,7 +106,7 @@ _(This grants @everyone the permission to send messages in channel test)_
 ```diff
 ! Specificity is key.
 ! You can combine all the creterias listed here when making a request.
-! Only a server owner can delete messages in all channels simultaneously.
+! Only a server owner can delete messages in all channels simultaneously and use the date time criteria.
 ! If no limit is provided, the default limit is 5 messages for everyone else and none for server owners.
 ! No limit is needed when using before and after criteria.
 ! Server owners can delete messages using date and time across all channels.
