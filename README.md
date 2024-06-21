@@ -3,6 +3,8 @@
 
 > Welcome to the shortest documentation you'll ever read!
 
+> Before Starting you should watch the video to understand more of what you will be reading 
+
 **What can Wal-i do now?**
 
 ## Commands
@@ -13,22 +15,30 @@ Since wali doesn't use any command to perform actions but natural language, we w
 
 #### 1.2 Deleting messages by id
 > "message: Delete this message to ensure privacy. 32109876"
+
 > "message: wal-i this message needs to be removed, 23424234, 32109876, user doesn't respect the rules",
 
 #### 1.2 Deleting messages by channels
 > "message: delete the last 30 messages in test",
+
 > "message: delete the last 20 messages" (Notice here I am not specying any channel, which means Wal-i will assume that the channel is where the request is being made)
+
 > "message: delete the last 20 messages sent here"
+
 > "message: delete the last 50 messages in all channels", (The possiblity of deleting messages in all channels is only available to the server owner)
 
 #### 1.3 Deleting messages by intervalles
 > "message: Delete the 10 messages sent before 23423424532 in test" (This will delete the 10 messages sent just before that message ID)
+
 > "message: delete the last 10 messages sent after 2375672242." (This will delete the 10 messages sent just after that message ID)
+
 > "message: delete the messages sent after 2375672242 and before 23423424532 in channel test."
+
 > "input: delete the messages sent betwen 2375672242 23423424532 in channel test." (Notice here and didn't have to specify Wal-i will always know which one is the before and which is the after message ID)
 
 #### 1.4 Deleting messages with attachements
 > "message: delete all messages with link"
+
 > "message: delete any message with an image in channel test"
 
 #### 1.5 Deleting messages with a specifique word or keyword
@@ -36,27 +46,40 @@ Since wali doesn't use any command to perform actions but natural language, we w
 
 #### 1.6 Deleting messages by users
 > "message: delete the last 10 messages ali sent" (We already established that if no channel is provided the channel where the command is being invoked is used)
+
 > "message: delete the last 10 messages ali sent in test" (Notice here I didn't have to specify that test is a channel)
+
 > "message: delete the last 10 messages I sent in channel test."
+
 > "message: delete the last 10 messages I sent in all channels" (This is only available to the server owner, still don't know why you would need it)
+
 > "message: Delete the 20 messages ali sent before 23423424532 in channel test" (This will delete the next 10 message the member ali sent after that message ID)
+
 > "message: delete messages sent by ali after 23453534536 and before 23423424532"
+
 > "message: delete messages with stp in channel test sent by ali before this message 23453534536" (This will delete any message the member ali before that message ID containing the word "stp")
 
 And all of that can be combined
 This can work:
 > "message: Delete messages sent by ali and sam containing trip"
 As this can also work
+
 > "message: delete messages sent between 2am and 5pm" (You just need to know that Wal-i uses the international timezone since the discord API doesn't provide any way of getting the user timezone)
 
 You can combine all of that you just need to be specific in your request:
 **Here's some few things to keep in mind when deleting messages**
 > Specificity is key
+
 > Only a server owner can delete messages in all channels at the same time
+
 > If you are not a server owner and you didn't provide a limit when deleting a message the default limit will be 5
+
 > When deleting messages with before and after you don't need any limit
+
 > When before and after are date time and if you are a server owner you can delete messages in all channels at the same time
+
 > Moderators cannot delete messages using date and time
+
 > Notice that none of the examples give a reason when deleting messages but you will always need one
 
 **Wal-i gives you targeted message deletion capabilities, you just need to remember specificity is key. And if he can't do something he will just tell you**
